@@ -19,6 +19,7 @@ from app.handlers.start import (
     help_command,
     start_command,
 )
+from app.handlers.movie_finder import register_movie_handlers
 
 
 logging.basicConfig(
@@ -86,6 +87,7 @@ def create_application() -> Application:
             handle_url,
         )
     )
+    register_movie_handlers(application)
 
     application.add_error_handler(
         error_handler
